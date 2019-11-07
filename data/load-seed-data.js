@@ -19,11 +19,11 @@ async function run() {
                 
 
                 return client.query(`
-                    INSERT INTO monkeys (name, url, old_world, new_world, common_weight, common_height, summary)
+                    INSERT INTO monkeys (name, image, old_world, new_world, weight, family, summary)
                     VALUES ($1, $2, $3, $4, $5, $6, $7)
                 `, 
                 
-                [monkey.name, monkey.url, monkey.old_world, monkey.new_world, monkey.common_weight, monkey.common_height, monkey.summary]);
+                [monkey.name, monkey.image, monkey.old_world, monkey.new_world, monkey.weight, monkey.family, monkey.summary]);
 
             })
         );

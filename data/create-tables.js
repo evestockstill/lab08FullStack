@@ -22,11 +22,11 @@ async function run() {
           CREATE TABLE monkeys (
               id SERIAL PRIMARY KEY NOT NULL,
               name VARCHAR (256),
-              image_url VARCHAR (256),
+              image VARCHAR (256),
               old_world BOOLEAN NOT NULL,
               new_world BOOLEAN NOT NULL,
-              common_weight VARCHAR (256),
-              common_height VARCHAR (256),
+              weight VARCHAR (256),
+              family VARCHAR (256),
               summary VARCHAR (256)
           )
         `);
