@@ -1,0 +1,17 @@
+header {
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 1rem; 
+ min-height: 500px;
+ background-image: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)), url('./Public/assets/primate-ape-thinking-mimic.jpg');
+ background-position: center ;
+ background-repeat: no-repeat;
+ background-size: cover;
+ opacity: .5;
+
+}
+nav {
+    height: 200px;
+}
