@@ -26,7 +26,7 @@ async function run() {
               old_world BOOLEAN NOT NULL,
               new_world BOOLEAN NOT NULL,
               weight VARCHAR (256),
-              family VARCHAR (256),
+              type VARCHAR (256),
               summary VARCHAR (256)
           )
         `);

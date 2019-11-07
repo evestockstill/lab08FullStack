@@ -27,11 +27,11 @@ app.get('/api/monkeys', async (req, res) => {
         const result = await client.query(`
             SELECT
                 name,
-                image_url,
+                image,
                 old_world,
                 new_world,
-                common_weight,
-                common_height,
+                weight,
+                type,
                 summary
             FROM MONKEYS;
         `);
