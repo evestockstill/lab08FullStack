@@ -19,7 +19,17 @@ async function run() {
 
         // run a query to create tables
         await client.query(`
-          
+          CREATE TABLE monkeys (
+              id SERIAL PRIMARY KEY NOT NULL,
+              name VARCHAR (8),
+              type VARCHAR (8),
+              url VARCHAR (8),
+              old_world BOOLEAN NOT NULL,
+              new_world BOOLEAN NOT NULL,
+              common_height VARCHAR (8),
+              common_weight VARCHAR (8),
+              summary VARCHAR (8)
+          )
         `);
 
         console.log('create tables complete');
