@@ -2,7 +2,7 @@ require('dotenv').config();
 const pg = require('pg');
 const Client = pg.Client;
 // import seed data:
-const data = require('./your-data.js');
+const monkeys = require('./monkeyObject.js');
 
 run();
 
@@ -15,10 +15,15 @@ async function run() {
         // "Promise all" does a parallel execution of async tasks
         await Promise.all(
             // map every item in the array data
-            data.map(item => {
+            monkeys.map(monkey => {
+                
 
-                // Use a "parameterized query" to insert the data,
-                // Don't forget to "return" the client.query promise!
+                return client.query(`
+                    INSERT INTO monkeys (name, url, old_world, new_world, common_weight, common_height, summary)
+                    VALUES ($1, $2, $3, $4, $5, $6, $7)
+                `, 
+                
+                [monkey.name, monkey.url, monkey.old_world, monkey.new_world, monkey.common_weight, monkey.common_height, monkey.summary]);
 
             })
         );
