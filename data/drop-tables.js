@@ -11,6 +11,8 @@ async function run() {
         await client.connect();
 
         await client.query(`
+            DROP TABLE IF EXISTS monkey;
+            DROP TABLE IF EXISTS monkeys;
         `);
 
         console.log('drop tables complete');

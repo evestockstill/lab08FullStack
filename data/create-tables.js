@@ -21,14 +21,13 @@ async function run() {
         await client.query(`
           CREATE TABLE monkeys (
               id SERIAL PRIMARY KEY NOT NULL,
-              name VARCHAR (8),
-              type VARCHAR (8),
-              url VARCHAR (8),
+              name VARCHAR (256),
+              image_url VARCHAR (256),
               old_world BOOLEAN NOT NULL,
               new_world BOOLEAN NOT NULL,
-              common_height VARCHAR (8),
-              common_weight VARCHAR (8),
-              summary VARCHAR (8)
+              common_weight VARCHAR (256),
+              common_height VARCHAR (256),
+              summary VARCHAR (256)
           )
         `);
 

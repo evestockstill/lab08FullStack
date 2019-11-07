@@ -1,4 +1,4 @@
-export const monkeys = [
+module.exports = [
     {
         name: 'Emporer Tamarin Monkey',
         image_url: './Public/assets/emporer.jpg',
