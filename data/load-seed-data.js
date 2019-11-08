@@ -1,8 +1,8 @@
 require('dotenv').config();
 const pg = require('pg');
 const Client = pg.Client;
-const types = require('./types.js');
-const monkeys = require('./monkeyObject.js');
+const types = require('./types');
+const monkeys = require('./monkeyObject');
 
 run();
 
@@ -31,8 +31,19 @@ async function run() {
             { name: 'Atelidae', id: 1 },
             { name: 'Callitrichidae', id: 2 },
             { name: 'Cebidae', id: 3 },
-            { name: 'Cercopithecidae', id: 4 },
-              
+            { name: 'Cercopithecidae', id: 4 },   
+
+        ];
+        [
+            {
+                name: 'Golden lion tamarin',
+                image: './Public/assets/golden-lion-tamarin_thumb.jpeg',
+                old_world: false,
+                new_world: true,
+                weight: '2',
+                type: 'Callitrichidae',
+                summary: 'Golden lion tamrin sleep in nest which they frequently move in order to reduce leaving scents in fear of predators finding them. They tend to live in groups of 2 to 8 members.'
+            },
 
         ];
             
@@ -44,13 +55,11 @@ async function run() {
                 });
                 return client.query(`
                         INSERT INTO monkeys (name, image, old_world, new_world, weight, type_id, summary)
-                        VALUES ($1, $2, $3, $4, $5, $6, $7)
+                        VALUES ($1, $2, $3, $4, $5, $6, $7);
                     `, 
                 [monkey.name, monkey.image, monkey.old_world, monkey.new_world, monkey.weight, type.id, monkey.summary]);
             })
         );
-
-                
 
         console.log('seed data load complete');
     }
