@@ -9,8 +9,8 @@ class Component {
         // console.log(`Component "${this.constructor.name}" got props:` + '\n' + JSON.stringify(this.props, true, 2));
     }
 
-    onRender(/*dom*/) {
-        // no-op
+    onRender() {
+        
     }
 
     renderDOM() {
@@ -19,15 +19,12 @@ class Component {
             throw new Error(`Component "${this.constructor.name}" needs to return an html string from renderHTML`);
         }
 
-        const dom = htmlToDOM(html);
-
+        const element = htmlToDOM(html);
         // remember the root Element for later for replacing or removing
-        this.rootElement = dom;
+        this.rootElement = element;
         // call onRender to allow components to do additional work
-        this.onRender(dom);
-
-        // return to the caller
-        return dom;
+        this.onRender(element);
+        return element;
     }
 
     renderHTML() {
@@ -36,9 +33,7 @@ class Component {
 
     update(props) {
         props = props || {};
-        // update the props:
         Object.assign(this.props, props);
-
         const oldRoot = this.rootElement;
 
         if (!oldRoot) {
