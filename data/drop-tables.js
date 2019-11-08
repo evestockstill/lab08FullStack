@@ -12,7 +12,7 @@ async function run() {
 
         await client.query(`
             DROP TABLE IF EXISTS monkey;
-            DROP TABLE IF EXISTS monkeys;
+            DROP TABLE IF EXISTS types;
         `);
 
         console.log('drop tables complete');
