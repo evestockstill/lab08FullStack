@@ -43,7 +43,7 @@ async function run() {
                     return type.name === monkey.type;
                 });
                 return client.query(`
-                        INSERT INTO monkeys (name, image, old_world, new_world, weight, type, summary)
+                        INSERT INTO monkeys (name, image, old_world, new_world, weight, type_id, summary)
                         VALUES ($1, $2, $3, $4, $5, $6, $7)
                     `, 
                 [monkey.name, monkey.image, monkey.old_world, monkey.new_world, monkey.weight, type.id, monkey.summary]);
