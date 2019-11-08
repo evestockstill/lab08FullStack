@@ -1,44 +1,40 @@
 // Load Environment Variables from the .env file
 require('dotenv').config();
 
-// Application Dependencies
 const express = require('express');
 const cors = require('cors');
-// const morgan = require('morgan');
+const morgan = require('morgan');
 const pg = require('pg');
 
-// Database Client
 const Client = pg.Client;
 const client = new Client(process.env.DATABASE_URL);
 client.connect();
 
-// Application Setup
 const app = express();
 const PORT = process.env.PORT;
-// app.use(morgan('dev')); // http logging
-app.use(cors()); // enable CORS request
-app.use(express.static('public')); // server files from /public folder
+app.use(morgan('dev')); 
+app.use(cors()); 
+app.use(express.static('public')); 
+app.use(express.json()); 
 
-// API Routes
 
 app.get('/api/monkeys', async (req, res) => {
 
     try {
         const result = await client.query(`
             SELECT
-                name,
-                image,
-                old_world,
-                new_world,
-                weight,
-                type,
-                summary
-            FROM monkeys;
+                m.*,
+                t.name as type
+            FROM monkeys m
+            JOIN types t
+            ON   m.type_id = m.id
+            ORDER BY m.weight;
         `);
 
         res.json(result.rows);
     }
     catch (err) {
+        console.log(err);
         res.status(500).json({
             error: err.message || err
         });
@@ -46,7 +42,45 @@ app.get('/api/monkeys', async (req, res) => {
 
 });
 
-// Start the server
+app.post('/api/monkeys', async (req, res) => {
+    const monkey = req.body;
+
+    try {
+        const result = await client.query(`
+            INSERT INTO monkeys (name, image, old_world, new_world, weight, type_id, summary)
+            VALUES ($1, $2, $3, $4, $5, $6, $7)
+            RETURNING *;
+        `,
+        [monkey.name, monkey.image, monkey.old_world, monkey.new_world, monkey.weight, monkey.typeID, monkey.summary]
+        );
+
+        res.json(result.rows[0]);
+    }
+    catch (err) {
+        console.log(err);
+        res.status(500).json({
+            error: err.message || err
+        });
+    }
+});
+
+app.get('/api/types', async (req, res) => {
+    try {
+        const result = await client.query(`
+            SELECT *
+            FROM types
+            ORDER BY name;
+        `);
+        res.json(result.rows);
+    }
+    catch (err) {
+        console.log(err);
+        res.status(500).json({
+            error: err.message || err
+        });
+    }
+});
+
 app.listen(PORT, () => {
     console.log('server running on PORT', PORT);
 });
