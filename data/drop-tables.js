@@ -11,7 +11,7 @@ async function run() {
         await client.connect();
 
         await client.query(`
-            DROP TABLE IF EXISTS monkey;
+            DROP TABLE IF EXISTS monkeys;
             DROP TABLE IF EXISTS types;
         `);
 
