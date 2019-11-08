@@ -12,8 +12,12 @@ async function run() {
     try {
        
         await client.connect();
-
         await client.query(`
+            CREATE TABLE types (
+                id SERIAL PRIMARY KEY NOT NULL,
+                name VARCHAR(256) NOT NULL
+            );
+
           CREATE TABLE monkeys (
               id SERIAL PRIMARY KEY NOT NULL,
               name VARCHAR (256),
@@ -21,7 +25,7 @@ async function run() {
               old_world BOOLEAN NOT NULL,
               new_world BOOLEAN NOT NULL,
               weight VARCHAR (256),
-              type VARCHAR (256),
+              type_id VARCHAR (256),
               summary VARCHAR (256)
           )
         `);
