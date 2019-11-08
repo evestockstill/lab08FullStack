@@ -1,8 +1,8 @@
 require('dotenv').config();
 const pg = require('pg');
 const Client = pg.Client;
-const types = require('./types');
-const monkeys = require('./monkeyObject');
+const types = require('./types.js');
+const monkeys = require('./monkeyObject.js');
 
 run();
 
