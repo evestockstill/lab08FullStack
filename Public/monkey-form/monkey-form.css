@@ -1,0 +1,8 @@
+.monkey-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px 40px 20px 30px;
+    background: green;
+    border: 1px solid black;
+}
