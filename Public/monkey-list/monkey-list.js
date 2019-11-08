@@ -1,4 +1,4 @@
-// import App from './ResourceApp.js';
+import MonkeyListApp from './MonkeyListApp.js';
 
-const app = new App();
+const app = new MonkeyListApp();
 document.body.prepend(app.renderDOM());

@@ -3,9 +3,9 @@ import Header from '../common/Header.js';
 
 class App extends Component {
 
-    onRender(dom) {
+    onRender(element) {
         const header = new Header();
-        dom.prepend(header.renderDOM());
+        element.prepend(header.renderDOM());
     }
 
     renderHTML() {
