@@ -3,7 +3,7 @@ const pg = require('pg');
 const Client = pg.Client;
 const types = require('./types.js');
 const monkeys = require('./monkeyObject.js');
-const types = require('./types.js');
+
 
 run();
 
