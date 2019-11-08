@@ -33,7 +33,7 @@ app.get('/api/monkeys', async (req, res) => {
                 weight,
                 type,
                 summary
-            FROM MONKEYS;
+            FROM monkeys;
         `);
 
         res.json(result.rows);
