@@ -1,4 +1,4 @@
-import MonkeyItem from '../monkey-list/MonkeyItem.js'
+import MonkeyItem from '../monkey-list/MonkeyItem.js';
 
 const test = QUnit.test;
 QUnit.module('Render Monkey Item');
