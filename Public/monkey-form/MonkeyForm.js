@@ -78,7 +78,7 @@ class MonkeyForm extends Component {
                             <p>
                             <label for="type">Monkey Family</label>
                             <select id="type" name="type-id" required>
-                                <option disabled selected>&lt;monkey family&gt;</option>
+                                <option disabled selected>&lt;Monkey family&gt;</option>
                                 ${joinedOptionsList}
                             </select>
                         </p>
