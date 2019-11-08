@@ -1,6 +1,6 @@
 * {
-    background: black;
-    color: white;
+    /* background: black;
+    color: white; */
 }
 
 header {
@@ -18,7 +18,8 @@ header {
 
 }
 nav {
-    height: 200px;
+    height: 100px;
+    color: white;
 }
 .container {
     display: grid;
@@ -27,6 +28,7 @@ img {
   display: block;
   width: 100%;
   height: auto;
+
 }
 ul {
     display: grid;
@@ -34,6 +36,7 @@ ul {
   grid-gap: 1rem; 
  list-style: none;
 }
+
 footer {
     height: 200px;
 

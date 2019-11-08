@@ -1,4 +1,4 @@
-// import App from './ResourceFormApp.js';
+import MonkeyFormApp from './MonkeyFormApp.js';
 
-const app = new App();
+const app = new MonkeyFormApp();
 document.body.prepend(app.renderDOM());
