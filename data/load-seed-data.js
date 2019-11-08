@@ -3,6 +3,7 @@ const pg = require('pg');
 const Client = pg.Client;
 // import seed data:
 const monkeys = require('./monkeyObject.js');
+const types = require('./types.js');
 
 run();
 
@@ -41,7 +42,7 @@ async function run() {
         await Promise.all(
             monkeys.map(monkey => {
 
-                const type = savedTypes.find(type => {
+                const types = savedTypes.find(type => {
                     return type.name === monkey.type;
                 });
                 return client.query(`
