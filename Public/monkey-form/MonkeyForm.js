@@ -71,7 +71,7 @@ class MonkeyForm extends Component {
                         <p>
                         <label for="weight">Weight Range</label>
                             <span class="horizontally-centered">
-                                <input id="weight" name="weight" type="range" min="0" max="100" value="lbs">
+                                <input id="weight" name="weight" type="range" min="0" max="200" value="lbs">
                             <span id="weight-display">50</span>
                         </span>
                         </p>
