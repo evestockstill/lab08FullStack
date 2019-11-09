@@ -6,11 +6,9 @@ const Client = pg.Client;
 run();
 
 async function run() {
-    
     const client = new Client(process.env.DATABASE_URL);
 
     try {
-       
         await client.connect();
         await client.query(`
             CREATE TABLE types (
@@ -25,18 +23,15 @@ async function run() {
               old_world BOOLEAN NOT NULL,
               new_world BOOLEAN NOT NULL,
               weight VARCHAR (256),
-              type_id VARCHAR (256),
+              type_id INTEGER,
               summary VARCHAR (256)
           )
         `);
 
         console.log('create tables complete');
-    }
-    catch (err) {
+    } catch (err) {
         console.log(err);
-    }
-    finally {
+    } finally {
         client.end();
     }
-
 }
