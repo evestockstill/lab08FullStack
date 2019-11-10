@@ -18,7 +18,7 @@ class MonkeyList extends Component {
     renderHTML() {
 
         return /*html*/`
-            <ul class="all-monkeys"></ul>
+            <ul class="monkeys"></ul>
         `;
     }
 }

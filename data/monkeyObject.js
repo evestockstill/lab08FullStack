@@ -1,3 +1,4 @@
+ // eslint-disable-next-line no-undef
 module.exports = [
     {
         name: 'Emporer Tamarin',
@@ -70,6 +71,6 @@ module.exports = [
         weight: '20',
         type: 'Cercopithecidae',
         summary: 'Live in forests and prefer rainforests over mountain forests. They live in groups from five to twenty, with a harem male to female ratio. Believed to have evolved during the Ice Age in Vietnam and Laos.'
-    }
+    },
 
 ];

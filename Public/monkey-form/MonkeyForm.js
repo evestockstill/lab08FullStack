@@ -19,20 +19,19 @@ class MonkeyForm extends Component {
             const monkey = {
                 name: formData.get('name'),
                 image: formData.get('image'),
-                oldWorld: parseInt(formData.get('old_world')),
-                newWorld: parseInt(formData.get('new_world)')),
+                oldWorld: formData(formData.get('old_world')),
+                newWorld: formData(formData.get('new_world)')),
                 weight: parseInt(formData.get('weight')),
                 typeID: parseInt(formData.get('type-id')),
-                summary: formData.get('summary') === 'on'
+                summary: formData.get('summary')
             };
 
             try {
                 const saved = await addMonkey(monkey);
-                // for now log out our saved cat,
-                // eventually use id to redirect to detail page
+                
                 console.log(saved);
 
-                window.location = `monkey-list.html`;
+                window.location = `monkey-list.html?id=${saved.id}`;
             }
             catch (err) {
                 console.log('monkey can not saved :(', err);
@@ -44,12 +43,11 @@ class MonkeyForm extends Component {
     renderHTML() {
         const types = this.props.types;
         const monkeyOptionList = types.map(type => {
-            return `<option value="${type.id}">${type.name}</option>`;
+            return `<option value="${type.id}">${type.name}</option>
+            `;
         });
 
-        const joinedOptionsList = monkeyOptionList.join('');
 
-        console.log(joinedOptionsList);
         return /*html*/`
                 <form class="monkey-form">
                     <p>
@@ -79,7 +77,7 @@ class MonkeyForm extends Component {
                             <label for="type">Monkey Family</label>
                             <select id="type" name="type-id" required>
                                 <option disabled selected>&lt;Monkey family&gt;</option>
-                                ${joinedOptionsList}
+                                ${monkeyOptionList.join('')}
                             </select>
                         </p>
                         <p>
