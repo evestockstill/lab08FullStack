@@ -9,7 +9,7 @@ class Loading extends Component {
 
         return /*html*/`
             <div class="loading-container">
-                <img src="https://media.giphy.com/media/xTkcEQACH24SMPxIQg/giphy.gif">
+              
             </div>
         `;
     }
