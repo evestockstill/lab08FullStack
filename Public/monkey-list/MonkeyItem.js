@@ -17,7 +17,7 @@ class MonkeyItem extends Component {
                 <p class="type">This monkey is from the ${monkey.type} family</p>
                 <p class="summary">${monkey.summary}.</P>
                 </div>
-                </li>  
+            </li>  
         `;
     }
 }
