@@ -1,3 +1,6 @@
+
+
+
 header {
     display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -5,7 +8,7 @@ header {
  min-height: 500px;
  background-image: linear-gradient(
       rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0.4)), url('./Public/assets/primate-ape-thinking-mimic.jpg');
+      rgba(0, 0, 0, 0.4)), url('../assets/primate-ape-thinking-mimic.jpg');
  background-position: center ;
  background-repeat: no-repeat;
  background-size: cover;
@@ -14,5 +17,5 @@ header {
 }
 nav {
     height: 200px;
-    background: black;
+   
 }

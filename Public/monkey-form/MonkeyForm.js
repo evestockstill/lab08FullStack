@@ -88,7 +88,7 @@ class MonkeyForm extends Component {
                                 <p>
                                     <button>Add Monkey</button>
                                 </p>
-                        </form>
+                </form>
     `;
     }
 }
