@@ -14,7 +14,7 @@ class App extends Component {
            
                 <!-- header goes here -->
                 <main>
-                    <a href="./monkey-list.html"></a>
+                    <a href="./monkey-list.html">link</a>
                 </main>
             </div>
         `;

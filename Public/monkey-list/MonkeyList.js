@@ -5,6 +5,7 @@ class MonkeyList extends Component {
 
     onRender(element) {
         const monkeys = this.props.monkeys;
+        console.log(monkeys);
 
         monkeys.forEach(monkey => {
             const props = { monkey: monkey };

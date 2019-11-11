@@ -23,13 +23,14 @@ app.use(express.json());
 app.get('/api/monkeys', async (req, res) => {
 
     try {
+        // 
         const result = await client.query(`
             SELECT
                 m.*,
                 t.name as type
             FROM monkeys m
             JOIN types t
-            ON   m.type_id = m.id
+            ON   m.type_id = t.id
             ORDER BY m.weight;
         `);
 

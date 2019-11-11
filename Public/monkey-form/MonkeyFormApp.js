@@ -20,7 +20,7 @@ class MonkeyFormApp extends Component {
             main.appendChild(monkeyForm.renderDOM());
         }
         catch (err) {
-            console.log('Load monkeys failed\n', err);
+            console.log('Load monkeys failed', err);
         }
         finally {
             loading.update({ loading: false });
