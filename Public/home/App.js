@@ -11,9 +11,10 @@ class App extends Component {
     renderHTML() {
         return /*html*/`
             <div>
+           
                 <!-- header goes here -->
                 <main>
-                    <p>Main App Page</p>
+                    <a href="./monkey-list.html">
                 </main>
             </div>
         `;

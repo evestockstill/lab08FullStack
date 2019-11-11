@@ -5,7 +5,7 @@ class Header extends Component {
         const title = this.props.title || 'Monkeys';
 
         return /*html*/`
-            <header>
+            <header class="header">
                 
                 <h1>${title}</h1>
                 <nav>

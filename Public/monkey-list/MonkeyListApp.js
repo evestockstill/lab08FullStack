@@ -1,22 +1,37 @@
 import Component from '../Component.js';
 import Header from '../common/Header.js';
 import MonkeyList from './MonkeyList.js';
+import Loading from '../common/Loading.js';
 import { getMonkeys } from '../services/monkey-api.js';
 
 class MonkeyListApp extends Component {
 
-    onRender(element) {
+    async onRender(element) {
         const header = new Header({ title: 'List of Monkeys' });
         element.prepend(header.renderDOM());
+        
+        const loading = new Loading({ loading: true });
+        element.appendChild(loading.renderDOM());
 
-        const list = new MonkeyList({ monkeys: [] });
         const main = element.querySelector('main');
+        const list = new MonkeyList({ monkeys: [] });
         main.appendChild(list.renderDOM());
 
-        getMonkeys().then(monkeys => {
-            list.update({ monkeys });
-        });
+        try {
+            const monkeys = await getMonkeys();
+            list.update({ monkeys: monkeys });
+        }
+        catch (err) {
+            console.log('Load monkeys failed\n', err);
+        }
+        finally {
+            
+            setTimeout(() => {
+                loading.update({ loading: false });
+            }, 500);
+        }
     }
+    
 
     renderHTML() {
         return /*html*/`
