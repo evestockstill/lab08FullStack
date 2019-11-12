@@ -13,10 +13,18 @@ header {
  background-repeat: no-repeat;
  background-size: cover;
  opacity: .5;
-
 }
-/* nav {
-    height: 200px;
-    background: darkgray;
-   
-} */
+.title {
+    font-size: 4rem;
+    color: goldenrod;
+}
+a {
+ display: flex;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 1rem;
+    color: goldenrod;
+    justify-content: flex-end;
+    font-style: italic;
+    text-transform: capitalize;
+}

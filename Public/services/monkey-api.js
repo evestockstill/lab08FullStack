@@ -7,12 +7,12 @@ export async function getMonkeys() {
     const monkeyData = await response.json();
     return monkeyData;
 }
-// export async function s(id) {
-//     const url = `${URL}/monkeys/${id}`;
-//     const response = await fetch(url);
-//     const monkeyData = await response.json();
-//     return monkeyData;
-// }
+export async function getMonkey(id) {
+    const url = `${URL}/monkeys/${id}`;
+    const response = await fetch(url);
+    const monkeyData = await response.json();
+    return monkeyData;
+}
 
 
 export async function getTypes() {
