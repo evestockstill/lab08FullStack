@@ -14,7 +14,6 @@ export async function getMonkey(id) {
     return monkeyData;
 }
 
-
 export async function getTypes() {
     const url = `${URL}/types`;
 
