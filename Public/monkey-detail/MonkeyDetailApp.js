@@ -2,10 +2,10 @@ import Component from '../Component.js';
 import Header from '../common/Header.js';
 import Loading from '../common/Loading.js';
 import MonkeyDetail from './MonkeyDetail.js';
-import { getMonkeys } from '../services/monkey-api.js';
+import { getMonkey } from '../services/monkey-api.js';
+
 
 class MonkeyDetailApp extends Component {
-
     async onRender(element) {
         const header = new Header();
         element.prepend(header.renderDOM());
@@ -18,32 +18,29 @@ class MonkeyDetailApp extends Component {
         const searchParams = new URLSearchParams(window.location.search);
         const id = searchParams.get('id');
 
-       
         if (!id) {
             window.location = 'monkey-list.html';
             return;
         }
 
         try {
-            const monkey = await getMonkeys(id);
+            const monkey = await getMonkey(id);
             const monkeyDetail = new MonkeyDetail({ monkey });
             main.appendChild(monkeyDetail.renderDOM());
-        }
-        catch (err) {
+        } catch (err) {
             console.log(err);
-        }
-        finally {
+        } finally {
             loading.update({ loading: false });
         }
     }
-
     renderHTML() {
-        return /*html*/`
+        return /*html*/ `
             <div>
                 <!-- header goes here -->
                 
                 <div class="details"> 
-                </div>
+              
+                 
             </div>
         `;
     }

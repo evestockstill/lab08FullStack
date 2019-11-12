@@ -7,7 +7,7 @@ class Header extends Component {
         return /*html*/`
             <header class="header">
                 
-                <h1>${title}</h1>
+                <h1 class="title">${title}</h1>
                 <nav>
                     <a href="./">Home</a>
                        <a href="./monkey-list.html">monkey list</a>
