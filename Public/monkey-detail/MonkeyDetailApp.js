@@ -2,7 +2,7 @@ import Component from '../Component.js';
 import Header from '../common/Header.js';
 import Loading from '../common/Loading.js';
 import MonkeyDetail from './MonkeyDetail.js';
-import { getMonkey } from '../services/monkey-api.js';
+import { getMonkeys } from '../services/monkey-api.js';
 
 class MonkeyDetailApp extends Component {
 
@@ -25,7 +25,7 @@ class MonkeyDetailApp extends Component {
         }
 
         try {
-            const monkey = await getMonkey(id);
+            const monkey = await getMonkeys(id);
             const monkeyDetail = new MonkeyDetail({ monkey });
             main.appendChild(monkeyDetail.renderDOM());
         }
@@ -41,9 +41,9 @@ class MonkeyDetailApp extends Component {
         return /*html*/`
             <div>
                 <!-- header goes here -->
-                <main>
-                    
-                </main>
+                
+                <div class="details"> 
+                </div>
             </div>
         `;
     }

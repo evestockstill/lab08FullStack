@@ -10,7 +10,7 @@ class Header extends Component {
                 <h1>${title}</h1>
                 <nav>
                     <a href="./">Home</a>
-                    <a href="./monkey-detail.html">Monkeys</a>
+                       <a href="./monkey-list.html">monkey list</a>
                     <a href="./monkey-form.html">Add a Monkey</a>
                 </nav>
             </header>
