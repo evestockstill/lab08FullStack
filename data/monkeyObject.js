@@ -2,7 +2,7 @@
 module.exports = [
     {
         name: 'Emporer Tamarin',
-        image: './Public/assets/emporer.jpg',
+        image: 'assets/emporer.jpg',
         old_world: false,
         new_world: true,
         weight: '2',
@@ -11,7 +11,7 @@ module.exports = [
     },
     {
         name: 'Mandrill',
-        image: '../Public/assets/mandrill.jpeg',
+        image: 'assets/mandrill.jpeg',
         old_world: true,
         new_world: false,
         weight: '35 to 100',
@@ -20,7 +20,7 @@ module.exports = [
     },
     {
         name: 'Lion-tailed macaque',
-        image: './Public/assets/lion tailied square.jpg',
+        image: 'assets/lion tailied square.jpg',
         old_world: true,
         new_world: false,
         weight: '10 to 20',
@@ -29,7 +29,7 @@ module.exports = [
     },
     {
         name: 'Golden lion tamarin',
-        image: './Public/assets/golden-lion-tamarin_thumb.jpeg',
+        image: 'assets/golden-lion-tamarin_thumb.jpeg',
         old_world: false,
         new_world: true,
         weight: '2',
@@ -38,7 +38,7 @@ module.exports = [
     },
     {
         name: 'Blue',
-        image: './Public/assets/Blue_monkey_(Cercopithecus_mitis_stuhlmanni)_pair.jpg',
+        image: 'assets/Blue_monkey_(Cercopithecus_mitis_stuhlmanni)_pair.jpg',
         old_world: true,
         new_world: false,
         weight: '10 to 20',
@@ -47,7 +47,7 @@ module.exports = [
     },
     {
         name: 'Squirrel',
-        image: './Public/assets/squirrl.jpg',
+        image: 'assets/squirrl.jpg',
         old_world: false,
         new_world: true,
         weight: '2',
@@ -56,7 +56,7 @@ module.exports = [
     },
     {
         name: 'Spider',
-        image: './Public/assets/brown spider monkey.jpg',
+        image: 'assets/spider-monkey-02.png',
         old_world: false,
         new_world: true,
         weight: '',
@@ -65,7 +65,7 @@ module.exports = [
     },
     {
         name: 'Lutung',
-        image: './Public/assets/Silvery_Lutung.jpg',
+        image: 'assets/Silvery_Lutung.jpg',
         old_world: true,
         new_world: false,
         weight: '20',

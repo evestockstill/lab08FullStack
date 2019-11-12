@@ -1,0 +1,9 @@
+.img-container {
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+}
+img {
+    cursor: zoom-in;
+}
+}

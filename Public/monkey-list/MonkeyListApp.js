@@ -19,7 +19,6 @@ class MonkeyListApp extends Component {
 
         try {
             const monkeys = await getMonkeys();
-            console.log(monkeys, 'listApp');
             list.update({ monkeys: monkeys });
         }
         catch (err) {

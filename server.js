@@ -77,8 +77,8 @@ app.get('/api/monkeys/:id', async (req, res) => {
             t.name as type
             FROM monkeys m
             JOIN types t
-            ON m.type_id = m.id
-            WHERE c.id = $1
+            ON m.type_id = t.id
+            WHERE m.id = $1
             `,
         [id]);
 

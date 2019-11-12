@@ -3,13 +3,12 @@ import Component from '../Component.js';
 class MonkeyItem extends Component {
     renderHTML() {
         const monkey = this.props.monkey;
-        console.log(monkey.name, 'XXX');
 
-        return /*html*/`
+        return /*html*/ `
             <li class="monkey-item">
                 <h2>${monkey.name}</h2>
                 <div class="image-container">
-                 <img src="${monkey.image}" alt="${monkey.name}">
+                 <a href="./monkey-detail.html"> <img src="${monkey.image}" alt="${monkey.name}"></a>
                 </div>
                 <div class="info-container">
                 <p class="world-class"><span>Old World</span><span>New World</span>

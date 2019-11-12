@@ -1,8 +1,16 @@
 .monkey-form {
-    width: 100%;
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px 40px 20px 30px;
-    background: green;
-    border: 1px solid black;
+    height: 100%;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid white;
+    text-align: center;
+}
+label {
+    padding: 30px;
+}
+input {
+    width: 240px;
+    padding: 10px;
+    margin: 20px;
 }

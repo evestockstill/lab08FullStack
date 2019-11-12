@@ -1,4 +1,8 @@
 main {
     padding-top: 20px;
-    color: white;
+   
+}
+.details {
+    font-size: 50px;
+    color: red;
 }
